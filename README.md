@@ -2,7 +2,7 @@ Movie App (IMDB-D)
 
 ## Expected Outcome
 
-<!-- ![Project Snapshot](movie.gif) -->
+![ezgif com-gif-maker](https://github.com/cihanbagriyanik/Movie_App-IMDB-D-_react-tailwind-firebase-toastify/assets/132518854/07a7cc0f-d64b-4aca-980f-1e7671ee60d6)
 
 ## Description
 
