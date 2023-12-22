@@ -23,7 +23,16 @@ export const AuthContextt = createContext();
 //!component
 const AuthContextProvider = ({ children }) => {
   const navigate = useNavigate();
-  const [currentUser, setCurrentUser] = useState();
+
+  const [currentUser, setCurrentUser] = useState(
+    JSON.parse(localStorage.getItem("user")) || false
+  );
+
+  useEffect(() => {
+    localStorage.setItem("user", JSON.stringify(currentUser));
+  }, [currentUser]);
+
+  // console.log("curentUser", currentUser);
 
   useEffect(() => {
     userTakip();
@@ -83,7 +92,9 @@ const AuthContextProvider = ({ children }) => {
   //? Kullanıcının signin olup olmadığını takip eden ve kullanıcı değiştiğinde yeni kullanıcıyı response olarak dönen firebase metodu. bir kere çalıştır login logout takip eder
   const userTakip = () => {
     onAuthStateChanged(auth, (user) => {
-      // console.log(user);
+
+      // console.log("usetakip", user);
+
       if (user) {
         const { email, displayName, photoURL } = user;
         setCurrentUser({ email, displayName, photoURL });

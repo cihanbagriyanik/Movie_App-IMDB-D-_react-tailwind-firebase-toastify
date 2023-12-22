@@ -5,7 +5,7 @@ import { Link, useParams } from "react-router-dom";
 const MovieDetail = () => {
   const { id } = useParams();
   const [movieDetails, setMovieDetails] = useState("");
-  // console.log(id);
+
   const {
     title,
     poster_path,
